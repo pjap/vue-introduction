@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>VUE JS INTRODUCTION</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Hello World Using Once , So It Not Rendered -->
+      <h1 v-once>{{ title }}</h1>
+      <hr>
+      <!-- Create Method -->
+      <h4>{{ text }} ---> <input type="text" v-on:input="changeTitle"></h4>
+      <hr>
+      <!-- Calling Function On Interpolation -->
+      <p>{{ sayHello() }} --- This Using Data + Function </p>
+      <!-- Bind On Attributes HTML -->
+      <p>
+        {{ this.title }} - <a v-bind:href="link" target="_blank">Go To Google Website</a>
+      </p>
+      <hr>
+      <!-- Insert A Complete HTML Script -->
+      <p v-html="finishedLink"></p>
+      <hr>
+      <!-- Listening To Event -->
+      <h4>{{ counter }}</h4>
+      <button v-on:click="increase(2)">Click Me!</button>
+      <button v-on:click="decrease">Reset Me!</button>
+      <p v-on:mousemove="updateCoordinates">
+        Coordinates: {{ x }} - {{ y }} -
+        <span v-on:mousemove.stop>DEAD SPOT</span>
+      </p>
+      <hr>
+      <p v-on:click="updateCoordinates">
+        Click this heading to get the x (horizontal) and y (vertical)
+        coordinates of the mouse pointer when it was clicked.
+      </p>
+      <p><strong>X coord: {{ x }}, Y coord: {{ y }}</strong></p>
+    </div>
+  </body>
+  <script src="js/vue.js"></script>
+  <script src="js/index.js"></script>
+</html>

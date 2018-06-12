@@ -29,6 +29,9 @@ new Vue({
     },
     donothing(event) {
       event.stopPropagation()
+    },
+    alertMe() {
+      alert('Warning Alert!')
     }
   }
 })

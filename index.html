@@ -25,6 +25,8 @@
       <!-- Listening To Event -->
       <h4>{{ counter }}</h4>
       <button v-on:click="increase(2)">Click Me!</button>
+      <button v-on:click="counter++">Click Me!</button>
+      <p>{{ counter * 2 > 10 ? 'Greater Than 10' : 'Smaller Than 10' }}</p>
       <button v-on:click="decrease">Reset Me!</button>
       <p v-on:mousemove="updateCoordinates">
         Coordinates: {{ x }} - {{ y }} -
@@ -36,6 +38,9 @@
         coordinates of the mouse pointer when it was clicked.
       </p>
       <p><strong>X coord: {{ x }}, Y coord: {{ y }}</strong></p>
+      <hr>
+      <!-- Keyup When We Press Tab -->
+      <input type="text" v-on:keyup.enter.space.esc="alertMe">
     </div>
   </body>
   <script src="js/vue.js"></script>
